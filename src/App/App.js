@@ -1,9 +1,11 @@
+import { Countries } from "../pages/Countries";
+
 import './App.css';
 
 export const App = () => {
   return (
-    <div className='cow'>
-      KOROVA
+    <div className='app'>
+      <Countries />
     </div>
   );
 }
