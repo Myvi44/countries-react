@@ -1,0 +1,14 @@
+p {
+  text-align: left;
+  border: 4px solid blue;
+  font-size: 16 px;
+  padding: 5px;
+}
+
+button {
+  border: 4 px solid black;
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(190, 190, 190);
+  color: black;
+}/*# sourceMappingURL=style.css.map */
