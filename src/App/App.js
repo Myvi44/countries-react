@@ -5,7 +5,7 @@ import './App.css';
 export const App = () => {
   return (
     <div className='app'>
-      <Countries />
+      <Countries className="countries" />
     </div>
   );
 }
