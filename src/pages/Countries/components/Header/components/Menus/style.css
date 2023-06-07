@@ -12,6 +12,6 @@
 }
 .menus-container .menus-item:hover {
   background: radial-gradient(rgba(250, 17, 48, 0.273), rgba(250, 17, 48, 0.182), rgba(250, 17, 48, 0));
-  color: rgb(56, 7, 86);
+  color: white;
   cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

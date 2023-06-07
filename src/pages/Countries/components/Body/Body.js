@@ -1,9 +1,22 @@
+import { Filters } from "./components/Filters";
+import { Search } from "./components/Search"
+import { CountryList } from "./components/CountryList";
+
 export const Body = () => {
-    return(
+    return (
         <>
-            {/* <Search/> */}
-            {/* <Filters/> */}
-            {/* <CountryList/> */}
+            <Search />
+            <Filters />
+            <CountryList countryList={[{
+                name: "Украина",
+                population: "568sdvdsv",
+                age: "32"
+            },
+            {
+                name: "  Бельгия",
+                population: "563543",
+                age: "154"
+            }]} />
         </>
     )
 }
