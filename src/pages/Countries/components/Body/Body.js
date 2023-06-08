@@ -10,7 +10,14 @@ export const Body = () => {
             <CountryList countryList={[{
                 name: "Украина",
                 population: "568sdvdsv",
-                age: "32"
+                age: "32",
+                official: "jfj",
+                capital: "55",
+                languages: "ghgh",
+                flag: "jgt",
+                maps: "jgjg",
+                openStreetMaps: "jfjfj",
+                flags: "gjg",
             },
             {
                 name: "  Бельгия",
