@@ -1,29 +1,26 @@
+import { useState } from "react";
+import { sendRequest } from "../../../../services/sendRequest";
+
 import { Filters } from "./components/Filters";
 import { Search } from "./components/Search"
 import { CountryList } from "./components/CountryList";
 
 export const Body = () => {
+
+    const [response, setResponse] = useState([]);
+
+    const getResponse = () => {
+        sendRequest(setResponse)
+    }
+
+    console.log(response);
+
     return (
         <>
+            <button className="refresher" onClick={getResponse}>Refresh</button>
             <Search />
             <Filters />
-            <CountryList countryList={[{
-                name: "Украина",
-                population: "568sdvdsv",
-                age: "32",
-                official: "jfj",
-                capital: "55",
-                languages: "ghgh",
-                flag: "jgt",
-                maps: "jgjg",
-                openStreetMaps: "jfjfj",
-                flags: "gjg",
-            },
-            {
-                name: "  Бельгия",
-                population: "563543",
-                age: "154"
-            }]} />
+            <CountryList countryList={response} />
         </>
     )
 }
