@@ -8,9 +8,9 @@ import { Contacts } from "./components/Contacts"
 
 export const Countries = ({ className }) => {
 
-    const [currentBody, setCurrentBody] = useState("countries")
+    const [currentBody, setCurrentBody] = useState("main")
 
-    let currentBodyElement = <MainPage />;
+    let currentBodyElement;
 
     switch (currentBody) {
         case "main":

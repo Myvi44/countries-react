@@ -1,1 +1,5 @@
-/*# sourceMappingURL=style.css.map */
+.country-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}/*# sourceMappingURL=style.css.map */

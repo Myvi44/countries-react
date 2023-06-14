@@ -1,6 +1,6 @@
-export const Country = ({currentCountry}) => {
+export const Country = ({ currentCountry}) => {
     return (
-        <div>
+        <div className="country">
             <h3>{currentCountry.name}</h3>
             <p>{currentCountry.official}</p>
             <p>{currentCountry.capital}</p>

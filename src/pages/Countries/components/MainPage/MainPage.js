@@ -1,5 +1,3 @@
-import image from "./logo.png"
-
 import "./style.css"
 
 export const MainPage = () => {
