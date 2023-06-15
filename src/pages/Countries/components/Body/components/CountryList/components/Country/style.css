@@ -1,3 +1,7 @@
 .country {
   width: 30%;
+  border: 2px solid red;
+}
+.country h3 {
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */

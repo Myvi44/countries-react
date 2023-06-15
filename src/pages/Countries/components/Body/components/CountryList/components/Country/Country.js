@@ -1,16 +1,10 @@
-export const Country = ({ currentCountry}) => {
+import "./style.css"
+
+export const Country = ({ currentCountry }) => {
     return (
         <div className="country">
-            <h3>{currentCountry.name}</h3>
-            <p>{currentCountry.official}</p>
-            <p>{currentCountry.capital}</p>
-            <p>{currentCountry.region}</p>
-            <p>{currentCountry.languages}</p>
-            <p>{currentCountry.flag}</p>
-            <p>{currentCountry.maps}</p>
-            <p>{currentCountry.openStreetMaps}</p>
-            <p>{currentCountry.population}</p>
-            <p>{currentCountry.flags}</p>
+            <h3>{currentCountry?.name?.official}</h3>
+            <div><img src={currentCountry?.flags?.png} alt={currentCountry?.flags?.alt} /></div>
         </div>
     )
 }

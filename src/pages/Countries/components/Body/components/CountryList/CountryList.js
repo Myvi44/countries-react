@@ -1,9 +1,14 @@
 import { Country } from "./components/Country"
 
+import "./style.css"
+
 export const CountryList = ({ countryList }) => {
+
+    console.log(countryList);
+
     return (
         <div className="country-list">
-            {countryList && countryList.map(country => <Country key={country.name.official} currentCountry={country} /> )}
+            {Array.isArray(countryList) && countryList.map(country => <Country key={country.name.official} currentCountry={country} /> )}
         </div>
     )
 

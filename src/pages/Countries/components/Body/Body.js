@@ -12,8 +12,6 @@ export const Body = () => {
     const getResponse = () => {
         sendRequest(setResponse)
     };
-  
-    console.log(response);
 
     return (
         <>
