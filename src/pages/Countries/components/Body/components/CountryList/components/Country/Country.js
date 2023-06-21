@@ -12,11 +12,26 @@ export const Country = ({ currentCountry }) => {
             <div className="country__flag">
                 <img src={currentCountry?.flags?.png} alt={currentCountry?.flags?.alt} />
             </div>
-            <p>
+            <p className="capital">
                 {currentCountry?.capital?.length > 0 && "Capital:" + currentCountry?.capital[0] + "."}
             </p>
-            <p>
+            <p className="languages">
                 {currentCountry?.languages && "Languages:" + parseLanguagesToString(currentCountry?.languages)}
+            </p>
+            <p className="timezones">
+                {currentCountry?.timezones?.length > 0 && "Timezones:" + currentCountry?.timezones[0] + "."}
+            </p>
+            <p className="population">
+                {currentCountry?.population && "Population:" + currentCountry?.population}
+            </p>
+            <p className="status">
+                {currentCountry?.status && "Status:" + currentCountry?.status}
+            </p>
+            <p className="region">
+                {currentCountry?.region && "Region:" + currentCountry?.region}
+            </p>
+            <p className="startOfWeek">
+                {currentCountry?.startOfWeek && "StartOfWeek:" + currentCountry?.startOfWeek}
             </p>
         </div>
     )
