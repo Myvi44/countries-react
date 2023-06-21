@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { sendRequest } from "../../services/sendRequest"
 
 import { Header } from "./components/Header"
 import { Body } from "./components/Body"
@@ -8,7 +9,12 @@ import { Contacts } from "./components/Contacts"
 
 export const Countries = ({ className }) => {
 
-    const [currentBody, setCurrentBody] = useState("main")
+    const [currentBody, setCurrentBody] = useState("main");
+    const [ response,setResponse] = useState([])
+
+useEffect(
+    () => sendRequest(setResponse),[currentBody]
+)
 
     let currentBodyElement;
 
@@ -16,8 +22,8 @@ export const Countries = ({ className }) => {
         case "main":
             currentBodyElement = <MainPage />;
             break;
-        case "countries":
-            currentBodyElement = <Body />;
+        case "countries":      
+            currentBodyElement = <Body response={response}/>;
             break;
         case "aboutUS":
             currentBodyElement = <AboutUs />;

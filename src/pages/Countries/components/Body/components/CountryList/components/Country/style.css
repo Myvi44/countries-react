@@ -42,4 +42,7 @@
 }
 .country .startOfWeek {
   color: LightCyan;
+}
+.country p {
+  padding-left: 5%;
 }/*# sourceMappingURL=style.css.map */

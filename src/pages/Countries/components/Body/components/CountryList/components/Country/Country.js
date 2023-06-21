@@ -2,11 +2,11 @@ import { parseLanguagesToString } from "../../../../../../../../utility/parseLan
 
 import "./style.css"
 
-export const Country = ({ currentCountry }) => {
+export const Country = ({ currentCountry, setCurrentElement }) => {
 
     return (
         <div className="country">
-            <h3 className="country__name">
+            <h3 className="country__name" onClick={()=>setCurrentElement(currentCountry?.name?.official) }>
                 {currentCountry?.name?.official}
             </h3>
             <div className="country__flag">
