@@ -1,6 +1,6 @@
 import { Country } from "./components/Country"
 
-import "./style.css"
+import "./style.sass"
 
 export const CountryList = ({ countryList, setCurrentElement}) => {
 

@@ -1,4 +1,4 @@
-import "./style.css";
+import "./style.sass";
 
 export const Menus = ({menus, setCurrentBody}) =>{
     return(

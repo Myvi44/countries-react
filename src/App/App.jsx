@@ -1,6 +1,6 @@
 import { Countries } from "../pages/Countries";
 
-import './App.css';
+import './App.sass';
 
 export const App = () => {
   return (

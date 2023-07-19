@@ -1,6 +1,6 @@
 import { parseLanguagesToString } from "../../../../../../../../utility/parseLanguagesToString"
 
-import "./style.css"
+import "./style.sass"
 
 export const Country = ({ currentCountry, setCurrentElement }) => {
 

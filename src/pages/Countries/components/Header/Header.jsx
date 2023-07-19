@@ -3,7 +3,7 @@ import {menus} from "../../../../constants/menus"
 import { Title } from "./components/Title/Title";
 import { Menus } from "./components/Menus";
 
-import "./style.css";
+import "./style.sass";
 
 export const Header = ({setCurrentBody}) => {
     return (
