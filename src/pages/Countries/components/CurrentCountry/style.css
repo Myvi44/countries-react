@@ -1,0 +1,38 @@
+.current-country {
+  width: 90%;
+  margin: 0 auto;
+  height: 80vh;
+  background: green;
+}
+.current-country .content {
+  display: flex;
+  justify-content: space-between;
+}
+.current-country .content .left-side {
+  width: 55%;
+  background: red;
+}
+.current-country .content .left-side .flags {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  height: 25vh;
+}
+.current-country .content .left-side .flags .flag {
+  height: 100%;
+}
+.current-country .content .left-side .flags .flag img {
+  height: 100%;
+  width: 100%;
+}
+.current-country .content .left-side .flags .coat-of-arms {
+  height: 100%;
+}
+.current-country .content .left-side .flags .coat-of-arms img {
+  height: 100%;
+  width: 100%;
+}
+.current-country .content .right-side {
+  width: 43%;
+  background: gray;
+}/*# sourceMappingURL=style.css.map */
