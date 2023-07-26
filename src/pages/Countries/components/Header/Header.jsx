@@ -5,11 +5,11 @@ import { Menus } from "./components/Menus";
 
 import "./style.sass";
 
-export const Header = ({setCurrentBody}) => {
+export const Header = () => {
     return (
         <>
             <Title />
-            <Menus setCurrentBody={setCurrentBody} menus = {menus}/>
+            <Menus menus = {menus}/>
             <hr className="hr-header"/>
         </>
     )

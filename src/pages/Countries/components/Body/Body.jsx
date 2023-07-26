@@ -1,24 +1,10 @@
-import { useState } from "react";
+import { Outlet } from "react-router"
 
-import { CurrentCountry } from "../CurrentCountry";
-import { Filters } from "./components/Filters";
-import { Search } from "./components/Search"
-import { CountryList } from "./components/CountryList";
+export const Body = () => {
 
-
-export const Body = ({ response }) => {
-    const [currentElement, setCurrentElement] = useState("All")
     return (
-        <>
-            <Search />
-            <Filters />
-            {
-                currentElement == "All" ?
-                    <CountryList  setCurrentElement= {setCurrentElement} countryList={response} /> :
-                    < CurrentCountry currentCountry={
-                        response && response.filter(country => country?.name?.official == currentElement)[0]
-                    } />
-            }
-        </>
+        <div className="body-element">
+            <Outlet />
+        </div>
     )
 }

@@ -1,6 +1,16 @@
+import { useContext } from "react"
+import { RestCountriesContext } from "../../Countries"
+import { useParams } from "react-router";
+
 import "./style.sass"
 
-export const CurrentCountry = ({ currentCountry }) => {
+export const CurrentCountry = () => {
+
+    let countryList = useContext(RestCountriesContext);
+    let { currentCountryID } = useParams();
+
+    let currentCountry = countryList.find(country => country?.id === currentCountryID)?.params;
+
     return (
         <div className="current-country">
             <div className="name">

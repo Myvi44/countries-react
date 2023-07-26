@@ -2,36 +2,73 @@ import { parseLanguagesToString } from "../../../../../../../../utility/parseLan
 
 import "./style.sass"
 
-export const Country = ({ currentCountry, setCurrentElement }) => {
+export const Country = ({ currentCountry }) => {
 
     return (
         <div className="country">
-            <h3 className="country__name" onClick={()=>setCurrentElement(currentCountry?.name?.official) }>
-                {currentCountry?.name?.official}
+            <h3 className="country__name">
+                <a target="blank" href={`/countries/${currentCountry?.cca3}`}>
+                    {currentCountry?.name?.official}
+                </a>
             </h3>
             <div className="country__flag">
                 <img src={currentCountry?.flags?.png} alt={currentCountry?.flags?.alt} />
             </div>
-            <p className="capital">
-                {currentCountry?.capital?.length > 0 && "Capital:" + currentCountry?.capital[0] + "."}
+            <p >
+                {
+                    currentCountry?.capital?.length > 0 &&
+                    <span className="country__params">
+                        <span className="param-unit">Capital: </span> {currentCountry?.capital[0]}.
+                    </span>
+                }
             </p>
-            <p className="languages">
-                {currentCountry?.languages && "Languages:" + parseLanguagesToString(currentCountry?.languages)}
+            <p>
+                {
+                    currentCountry?.languages &&
+                    <span className="country__params">
+                        <span className="param-unit">Languages: </span> {parseLanguagesToString(currentCountry?.languages)}
+                    </span>
+                }
             </p>
-            <p className="timezones">
-                {currentCountry?.timezones?.length > 0 && "Timezones:" + currentCountry?.timezones[0] + "."}
+            <p>
+                {
+                    currentCountry?.timezones?.length > 0 &&
+                    <span className="country__params">
+                        <span className="param-unit">Timezones: </span> {currentCountry?.timezones[0]}.
+                    </span>
+                }
             </p>
-            <p className="population">
-                {currentCountry?.population && "Population:" + currentCountry?.population}
+            <p>
+                {
+                    currentCountry?.population &&
+                    <span className="country__params">
+                        <span className="param-unit">Population: </span>  {currentCountry?.population}.
+                    </span>
+                }
             </p>
-            <p className="status">
-                {currentCountry?.status && "Status:" + currentCountry?.status}
+            <p>
+                {
+                    currentCountry?.status &&
+                    <span className="country__params">
+                        <span className="param-unit">Status: </span>  {currentCountry?.status}.
+                    </span>
+                }
             </p>
-            <p className="region">
-                {currentCountry?.region && "Region:" + currentCountry?.region}
+            <p>
+                {
+                    currentCountry?.region &&
+                    <span className="country__params">
+                        <span className="param-unit">Region: </span> {currentCountry?.region}.
+                    </span>
+                }
             </p>
-            <p className="startOfWeek">
-                {currentCountry?.startOfWeek && "StartOfWeek:" + currentCountry?.startOfWeek}
+            <p>
+                {
+                    currentCountry?.startOfWeek &&
+                    <span className="country__params">
+                        <span className="param-unit">StartOfWeek: </span> {currentCountry?.startOfWeek}.
+                    </span>
+                }
             </p>
         </div>
     )
