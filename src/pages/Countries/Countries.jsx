@@ -8,6 +8,7 @@ import { MainPage } from "./components/MainPage"
 import { Contacts } from "./components/Contacts"
 
 export const Countries = ({ className }) => {
+    
 
     const [currentBody, setCurrentBody] = useState("main");
     const [ response,setResponse] = useState([])

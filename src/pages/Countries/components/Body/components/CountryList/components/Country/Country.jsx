@@ -13,25 +13,25 @@ export const Country = ({ currentCountry, setCurrentElement }) => {
                 <img src={currentCountry?.flags?.png} alt={currentCountry?.flags?.alt} />
             </div>
             <p className="capital">
-                {currentCountry?.capital?.length > 0 && "Capital:" + currentCountry?.capital[0] + "."}
+                {currentCountry?.capital?.length > 0 && "Capital: " + currentCountry?.capital[0] + "."}
             </p>
             <p className="languages">
-                {currentCountry?.languages && "Languages:" + parseLanguagesToString(currentCountry?.languages)}
+                {currentCountry?.languages && "Languages: " + parseLanguagesToString(currentCountry?.languages)}
             </p>
             <p className="timezones">
-                {currentCountry?.timezones?.length > 0 && "Timezones:" + currentCountry?.timezones[0] + "."}
+                {currentCountry?.timezones?.length > 0 && "Timezones:  " + currentCountry?.timezones[0] + "."}
             </p>
             <p className="population">
-                {currentCountry?.population && "Population:" + currentCountry?.population}
+                {currentCountry?.population && "Population: " + currentCountry?.population}
             </p>
             <p className="status">
-                {currentCountry?.status && "Status:" + currentCountry?.status}
+                {currentCountry?.status && "Status: " + currentCountry?.status}
             </p>
             <p className="region">
-                {currentCountry?.region && "Region:" + currentCountry?.region}
+                {currentCountry?.region && "Region: " + currentCountry?.region}
             </p>
             <p className="startOfWeek">
-                {currentCountry?.startOfWeek && "StartOfWeek:" + currentCountry?.startOfWeek}
+                {currentCountry?.startOfWeek && "StartOfWeek: " + currentCountry?.startOfWeek}
             </p>
         </div>
     )
