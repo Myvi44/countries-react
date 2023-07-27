@@ -8,7 +8,6 @@ export let RestCountriesContext = createContext([]);
 
 export const Countries = () => {
 
-
     const [response, setResponse] = useState([])
 
     useEffect(
