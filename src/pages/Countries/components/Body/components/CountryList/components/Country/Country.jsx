@@ -8,7 +8,7 @@ export const Country = ({ currentCountry }) => {
         <div className="country">
             <h3 className="country__name">
                 <a target="blank" href={`/countries/${currentCountry?.cca3}`}>
-                    {currentCountry?.name?.official}
+                {currentCountry?.name?.official}
                 </a>
             </h3>
             <div className="country__flag">

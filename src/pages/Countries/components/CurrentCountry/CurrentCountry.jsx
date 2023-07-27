@@ -31,7 +31,34 @@ export const CurrentCountry = () => {
 
                 </div>
             </div>
+            <p >
+                    {currentCountry?.capital?.length > 0 && "Capital:" + currentCountry?.capital[0] + "."}
+            </p>
+            <p>
+                {currentCountry?.languages && "Languages:" + currentCountry?.languages}
+            </p>
+            <p>
+                {currentCountry?.timezones?.length > 0 && "Timezones:" + currentCountry?.timezones[0] + "."}
+            </p>
+            <p>
+                {currentCountry?.population && "Population:"+ currentCountry?.population}
+            </p>
+            <p>
+                {currentCountry?.status && "Status:" + currentCountry?.status}
+            </p>
+            <p>
+                {currentCountry?.region && "Region:" + currentCountry?.region}
+            </p>
+            <p>
+                {currentCountry?.startOfWeek && "StartOfWeek:" + currentCountry?.startOfWeek}
+            </p>
+            <p>
+                {currentCountry?.car && "Car:" + currentCountry?.car.side}
+            </p>
 
+            <p>
+                {currentCountry?.currencies && "Currencies:" + currentCountry?.currencies.pen}
+            </p>
         </div>
     )
 }
