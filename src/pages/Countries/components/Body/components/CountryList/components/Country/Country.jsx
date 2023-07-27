@@ -70,14 +70,7 @@ export const Country = ({ currentCountry }) => {
                     </span>
                 }
             </p>
-            <p>
-                {
-                    currentCountry?.borders &&
-                    <span className="country__params">
-                        <span className="param-unit">Borders:</span> {currentCountry?.borders[0]}
-                    </span>
-                }
-            </p>
+           
         </div>
     )
 }
