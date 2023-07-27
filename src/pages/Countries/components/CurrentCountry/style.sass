@@ -1,17 +1,24 @@
 .current-country
+    padding: 5px 25px
     width: 90%
     margin: 0 auto
     height: 80vh
-    background: green
-    
+    background: rgba(8, 72, 17, 0.858)
+    backdrop-filter: blur(5px)
+
+    .country__params
+        color: white
+            
+        .param-unit
+            color: black
+
     .content
         display: flex
         justify-content: space-between
 
         .left-side
             width: 55%
-            background: red
-            
+
             .flags
                 margin-top: 10px
                 display: flex
@@ -21,19 +28,16 @@
                 .flag
                     height: 100%
 
-                    img 
+                    img
                         height: 100%
                         width: 100%
 
                 .coat-of-arms
                     height: 100%
 
-                    img 
+                    img
                         height: 100%
                         width: 100%
         .right-side
             width: 43%
             background: gray
-
-            
-

@@ -1,6 +1,8 @@
 import { useContext } from "react"
 import { RestCountriesContext } from "../../Countries"
 import { useParams } from "react-router";
+import { parseLanguagesToString } from "../../../../utility/parseLanguagesToString";
+import { parseCurrenciesToString } from "../../../../utility/parseCurrenciesToString";
 
 import "./style.sass"
 
@@ -26,39 +28,84 @@ export const CurrentCountry = () => {
                             <img src={currentCountry?.coatOfArms?.png} />
                         </div>
                     </div>
+                    <p >
+                        {
+                            currentCountry?.capital?.length > 0 &&
+                            <span className="country__params">
+                                <span className="param-unit">Capital: </span> {currentCountry?.capital[0]}.
+                            </span>
+                        }
+                    </p>
+                    <p>
+                        {
+                            currentCountry?.languages &&
+                            <span className="country__params">
+                                <span className="param-unit">Languages: </span> {parseLanguagesToString(currentCountry?.languages)}
+                            </span>
+                        }
+                    </p>
+                    <p>
+                        {
+                            currentCountry?.timezones?.length > 0 &&
+                            <span className="country__params">
+                                <span className="param-unit">Timezones: </span> {currentCountry?.timezones[0]}.
+                            </span>
+                        }
+                    </p>
+                    <p>
+                        {
+                            currentCountry?.population &&
+                            <span className="country__params">
+                                <span className="param-unit">Population: </span>  {currentCountry?.population}.
+                            </span>
+                        }
+                    </p>
+                    <p>
+                        {
+                            currentCountry?.status &&
+                            <span className="country__params">
+                                <span className="param-unit">Status: </span>  {currentCountry?.status}.
+                            </span>
+                        }
+                    </p>
+                    <p>
+                        {
+                            currentCountry?.region &&
+                            <span className="country__params">
+                                <span className="param-unit">Region: </span> {currentCountry?.region}.
+                            </span>
+                        }
+                    </p>
+                    <p>
+                        {
+                            currentCountry?.startOfWeek &&
+                            <span className="country__params">
+                                <span className="param-unit">StartOfWeek: </span> {currentCountry?.startOfWeek}.
+                            </span>
+                        }
+                    </p>
+                    <p>
+                        {
+                            currentCountry?.car &&
+                            <span className="country__params">
+                                <span className="param-unit">Car:</span> {currentCountry?.car.side}
+                            </span>
+                        }
+                    </p>
+
+                    <p>
+                        {
+                            currentCountry?.currencies &&
+                            <span className="country__params">
+                                <span className="param-unit"> Currencies: </span> {parseCurrenciesToString(currentCountry?.currencies)}
+                            </span>
+                        }
+                    </p>
                 </div>
                 <div className="right-side">
 
                 </div>
             </div>
-            <p >
-                    {currentCountry?.capital?.length > 0 && "Capital:" + currentCountry?.capital[0] + "."}
-            </p>
-            <p>
-                {currentCountry?.languages && "Languages:" + currentCountry?.languages}
-            </p>
-            <p>
-                {currentCountry?.timezones?.length > 0 && "Timezones:" + currentCountry?.timezones[0] + "."}
-            </p>
-            <p>
-                {currentCountry?.population && "Population:"+ currentCountry?.population}
-            </p>
-            <p>
-                {currentCountry?.status && "Status:" + currentCountry?.status}
-            </p>
-            <p>
-                {currentCountry?.region && "Region:" + currentCountry?.region}
-            </p>
-            <p>
-                {currentCountry?.startOfWeek && "StartOfWeek:" + currentCountry?.startOfWeek}
-            </p>
-            <p>
-                {currentCountry?.car && "Car:" + currentCountry?.car.side}
-            </p>
-
-            <p>
-                {currentCountry?.currencies && "Currencies:" + currentCountry?.currencies.pen}
-            </p>
         </div>
     )
 }
