@@ -7,8 +7,8 @@ export const Country = ({ currentCountry }) => {
     return (
         <div className="country">
             <h3 className="country__name">
-                <a target="blank" href={`/countries/${currentCountry?.cca3}`}>
-                {currentCountry?.name?.official}
+                <a href={`/countries/${currentCountry?.cca3}`}>
+                    {currentCountry?.name?.official}
                 </a>
             </h3>
             <div className="country__flag">
