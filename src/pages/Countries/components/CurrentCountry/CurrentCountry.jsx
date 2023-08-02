@@ -1,8 +1,10 @@
 import { useContext } from "react"
-import { RestCountriesContext } from "../../Countries"
 import { useParams } from "react-router";
+
+import { RestCountriesContext } from "../../Countries"
 import { parseLanguagesToString } from "../../../../utility/parseLanguagesToString";
 import { parseCurrenciesToString } from "../../../../utility/parseCurrenciesToString";
+import { parseBordersToString } from "../../../../utility/parseBordersToString";
 
 import "./style.sass"
 
@@ -10,7 +12,6 @@ export const CurrentCountry = () => {
 
     let countryList = useContext(RestCountriesContext);
     let { currentCountryID } = useParams();
-
     let currentCountry = countryList.find(country => country?.id === currentCountryID)?.params;
 
     return (
@@ -102,13 +103,13 @@ export const CurrentCountry = () => {
                         }
                     </p>
                     <p>
-                {
-                    currentCountry?.borders &&
-                    <span className="country__params">
-                        <span className="param-unit">Borders:</span> {currentCountry?.borders[0]}
-                    </span>
-                }
-            </p>
+                        {
+                            currentCountry?.borders &&
+                            <span className="country__params">
+                                <span className="param-unit">Borders:</span> {parseBordersToString(currentCountry?.borders, countryList)}
+                            </span>
+                        }
+                    </p>
                 </div>
                 <div className="right-side">
 
