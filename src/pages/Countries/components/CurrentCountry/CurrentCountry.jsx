@@ -5,6 +5,9 @@ import { RestCountriesContext } from "../../Countries"
 import { parseLanguagesToString } from "../../../../utility/parseLanguagesToString";
 import { parseCurrenciesToString } from "../../../../utility/parseCurrenciesToString";
 import { parseBordersToString } from "../../../../utility/parseBordersToString";
+import { setZoomScale } from "../../../../utility/setZoomScale";
+
+import { GoogleMapCustom } from "../../../../components/GoogleMapCustom"
 
 import "./style.sass"
 
@@ -13,6 +16,8 @@ export const CurrentCountry = () => {
     let countryList = useContext(RestCountriesContext);
     let { currentCountryID } = useParams();
     let currentCountry = countryList.find(country => country?.id === currentCountryID)?.params;
+
+    console.log(currentCountry)
 
     return (
         <div className="current-country">
@@ -112,7 +117,9 @@ export const CurrentCountry = () => {
                     </p>
                 </div>
                 <div className="right-side">
-
+                    <div className="google-map">
+                        <GoogleMapCustom currentZoom={setZoomScale(currentCountry?.area)} currentCenter={currentCountry?.latlng} />
+                    </div>
                 </div>
             </div>
         </div>
