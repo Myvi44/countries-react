@@ -60,7 +60,7 @@ export const CurrentCountry = () => {
                     </p>
                     <p>
                         {
-                            currentCountry?.population &&
+                            currentCountry?.population > 0 &&
                             <span className="country__params">
                                 <span className="param-unit">Population: </span>  {currentCountry?.population}.
                             </span>

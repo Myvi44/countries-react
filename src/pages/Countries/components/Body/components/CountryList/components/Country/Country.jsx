@@ -7,7 +7,7 @@ export const Country = ({ currentCountry }) => {
     return (
         <div className="country">
             <h3 className="country__name">
-                <a href={`/countries-react/countries/${currentCountry?.cca3}`}>
+                <a href={`${currentCountry?.cca3}`}>
                     {currentCountry?.name?.official}
                 </a>
             </h3>
@@ -40,7 +40,6 @@ export const Country = ({ currentCountry }) => {
             </p>
             <p>
                 {
-                    currentCountry?.population &&
                     <span className="country__params">
                         <span className="param-unit">Population: </span>  {currentCountry?.population}.
                     </span>

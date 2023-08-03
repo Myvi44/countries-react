@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, redirect, RouterProvider } from "react-router-dom";
 
 import { Countries } from "../pages/Countries";
 import { CountryList } from "../pages/Countries/components/Body/components/CountryList"
@@ -12,7 +12,7 @@ import './App.sass';
 
 let router = createBrowserRouter([
   {
-    path: "/countries-react",
+    path: "/",
     element: <Countries />,
     children: [
       {
