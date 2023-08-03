@@ -2,7 +2,7 @@ import React from 'react';
 
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
-const API_KEY = "AIzaSyC5wXdDYFYLWNFgL1i6Sgew4hWzWM4B-SI";
+const API_KEY = "AIzaSyBRXA930N4nsRVNbcY7ybpfaUik5hJJwzo";
 
 export const GoogleMapCustom = ({ currentZoom, currentCenter }) => {
 
