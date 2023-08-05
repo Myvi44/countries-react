@@ -7,7 +7,7 @@ export const Country = ({ currentCountry }) => {
     return (
         <div className="country">
             <h3 className="country__name">
-                <a href={`${currentCountry?.cca3}`}>
+                <a href={currentCountry?.cca3}>
                     {currentCountry?.name?.official}
                 </a>
             </h3>

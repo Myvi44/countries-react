@@ -1,6 +1,6 @@
 export const menus = [
-    ["", "Главная"],
-    ["countries/all", "Страны"],
-    ["aboutUS", "О нас"],
-    ["contacts", "Контакты"]
+    ["/countries-react", "Главная"],
+    ["/countries-react/countries/all", "Страны"],
+    ["/countries-react/aboutUS", "О нас"],
+    ["/countries-react/contacts", "Контакты"]
 ];

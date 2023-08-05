@@ -7,7 +7,7 @@ export const Menus = ({ menus }) => {
                 menus && menus.map(
                     menu =>
                         <div id={menu[1]} key={menu[0]} className="menus-item">
-                            <a href={`/${menu[0]}`}>
+                            <a href={menu[0]}>
                                 {menu[1]}
                             </a>
                         </div>
