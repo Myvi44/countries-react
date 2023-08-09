@@ -69,7 +69,14 @@ export const Country = ({ currentCountry }) => {
                     </span>
                 }
             </p>
-           
+            <p>
+                {
+                    currentCountry?.area &&
+                    <span className="country__params">
+                        <span className="param-unit">Area: </span> {currentCountry?.area}.
+                    </span>
+                }
+            </p>
         </div>
     )
 }
