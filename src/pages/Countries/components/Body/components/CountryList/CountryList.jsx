@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { RestCountriesContext } from "../../../../Countries";
+import { setRightSearchResult } from "../../../../../../utility/setRightSearchResult";
 
 import { Country } from "./components/Country"
 
@@ -12,8 +13,7 @@ export const CountryList = () => {
 
     console.log(countryList);
 
-    let countryListAfterSearch = countryList
-    .filter(country => country?.params?.name?.official.includes(searchResult))
+    let countryListAfterSearch = setRightSearchResult(countryList, searchResult);
     
     return (
         <div>

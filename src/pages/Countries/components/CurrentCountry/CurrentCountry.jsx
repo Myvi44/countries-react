@@ -121,7 +121,7 @@ export const CurrentCountry = () => {
                         <GoogleMapCustom currentZoom={setZoomScale(currentCountry?.area)} currentCenter={currentCountry?.latlng} />
                     </div>
                     <div>
-                        OpenStreetMaps: <a href="https://www.openstreetmap.org/relation/2186665">https://www.openstreetmap.org/relation/2186665</a>
+                        OpenStreetMaps: <a href={currentCountry?.maps?.openStreetMaps}>{currentCountry?.maps?.openStreetMaps}</a>
 
                     </div>
                 </div>

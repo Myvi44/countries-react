@@ -73,7 +73,7 @@ export const Country = ({ currentCountry }) => {
                 {
                     currentCountry?.area &&
                     <span className="country__params">
-                        <span className="param-unit">Area: </span> {currentCountry?.area}.
+                        <span className="param-unit">Area: </span> {currentCountry?.area} km².
                     </span>
                 }
             </p>
