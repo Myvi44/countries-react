@@ -21,8 +21,9 @@ export const CurrentCountry = () => {
 
     return (
         <div className="current-country">
-            <div className="name">
+            <div className="name"><b>
                 {currentCountry?.name?.official}
+                </b>
             </div>
             <div className="content">
                 <div className="left-side">
@@ -115,12 +116,20 @@ export const CurrentCountry = () => {
                             </span>
                         }
                     </p>
+                    <p>
+                {
+                    currentCountry?.area &&
+                    <span className="country__params">
+                        <span className="param-unit">Area: </span> {currentCountry?.area} km².
+                    </span>
+                }
+            </p>
                 </div>
                 <div className="right-side">
                     <div className="google-map">
                         <GoogleMapCustom currentZoom={setZoomScale(currentCountry?.area)} currentCenter={currentCountry?.latlng} />
                     </div>
-                    <div>
+                    <div className="OpenStreet">
                         OpenStreetMaps: <a href={currentCountry?.maps?.openStreetMaps}>{currentCountry?.maps?.openStreetMaps}</a>
 
                     </div>
