@@ -6,13 +6,13 @@ export const setRightSearchResult = (currentArray, searchResult) => {
     let arrayStartsWith = currentArray
         ?.filter(
             (country) => {
-                return country?.params?.name?.official?.startsWith(searchResult)
+                return country?.params?.name?.official?.toLowerCase()?.startsWith(searchResult?.toLowerCase())
             }
         );
     let arrayIncludes = currentArray
         ?.filter(
             (country) => {
-                return country?.params?.name?.official?.includes(searchResult)
+                return country?.params?.name?.official?.toLowerCase()?.includes(searchResult?.toLowerCase())
             }
         );
 

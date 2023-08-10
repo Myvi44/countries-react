@@ -7,7 +7,7 @@ export const parseLanguagesToString = (languagesObject) => {
         if (i == languagesArray?.length - 1)
             languagesString += languagesArray[i] + "."
         else
-            languagesString += languagesArray[i] + ","
+            languagesString += languagesArray[i] + ", "
     }
     return languagesString;
 }
