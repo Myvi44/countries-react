@@ -79,7 +79,7 @@ export const CurrentCountry = () => {
                         {
                             currentCountry?.region &&
                             <span className="country__params">
-                                <span className="param-unit">Region: </span> {currentCountry?.region}.
+                              <span className="param-unit">Continent: </span> {currentCountry?.continents[0]}.
                             </span>
                         }
                     </p>

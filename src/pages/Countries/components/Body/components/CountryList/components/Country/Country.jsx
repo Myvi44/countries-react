@@ -34,7 +34,7 @@ export const Country = ({ currentCountry }) => {
                 {
                     currentCountry?.timezones?.length > 0 &&
                     <span className="country__params">
-                        <span className="param-unit">Timezones: </span> {currentCountry?.timezones[0]}.
+                        <span className="param-unit">Timezones: </span> {currentCountry?.timezones}.
                     </span>
                 }
             </p>
@@ -57,7 +57,7 @@ export const Country = ({ currentCountry }) => {
                 {
                     currentCountry?.region &&
                     <span className="country__params">
-                        <span className="param-unit">Region: </span> {currentCountry?.region}.
+                        <span className="param-unit">Continent: </span> {currentCountry?.continents[0]}.
                     </span>
                 }
             </p>

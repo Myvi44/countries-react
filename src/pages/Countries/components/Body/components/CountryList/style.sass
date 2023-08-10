@@ -2,7 +2,7 @@
     display: flex
     flex-wrap: wrap
     justify-content: space-evenly
-   
+
 .search
     width: 80%
     margin: 0 auto
@@ -10,9 +10,15 @@
     input
         border: 1.5px solid rgb(26, 26, 26)
         width: 100%
+        color: white
+        font-size: 18px
         padding: 10px 15px
         border-radius: 10px
         background-color: rgba(102, 100, 95, 0.913)
+
         &:focus, &:hover
             outline: none
-            
+
+        &::placeholder
+            color: white
+            font-size: 18px

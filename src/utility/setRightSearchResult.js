@@ -15,8 +15,20 @@ export const setRightSearchResult = (currentArray, searchResult) => {
                 return country?.params?.name?.official?.toLowerCase()?.includes(searchResult?.toLowerCase())
             }
         );
+    let arrayCapitalIncludes = currentArray
+        ?.filter(
+            (country) => {
+                return country?.params?.capital && country?.params?.capital[0]?.toLowerCase()?.includes(searchResult?.toLowerCase())
+            }
+        );
+    let arrayCapitalStartsWith = currentArray
+        ?.filter(
+            (country) => {
+                return country?.params?.capital && country?.params?.capital[0]?.toLowerCase()?.startsWith(searchResult?.toLowerCase())
+            }
+        );
 
-    resultArray = [...new Set([...arrayStartsWith, ...arrayIncludes])]
+    resultArray = [...new Set([...arrayStartsWith, ...arrayIncludes, ...arrayCapitalIncludes, ...arrayCapitalStartsWith])]
 
     return resultArray;
 }

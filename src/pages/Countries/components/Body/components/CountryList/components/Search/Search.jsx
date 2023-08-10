@@ -5,7 +5,7 @@ export const Search = ({ searchResult, setSearchResult }) => {
     return (
         <div className="search">
             <input
-                placeholder="Введите название страны которую ищете"
+                placeholder="Введите название страны/столицы которую ищете"
                 type="text"
                 value={searchResult}
                 onChange={
