@@ -9,7 +9,7 @@ export const parseCurrenciesToString = (currenciesObject) => {
         if (i == currenciesArray?.length - 1)
             currenciesString += "."
         else
-            currenciesString += ","
+            currenciesString += ", "
     }
     return currenciesString;
 }
