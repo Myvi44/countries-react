@@ -21,8 +21,9 @@ export const CurrentCountry = () => {
 
     return (
         <div className="current-country">
-            <div className="name"><b>
-                {currentCountry?.name?.official}
+            <div className="name">
+                <b>
+                    {currentCountry?.name?.official}
                 </b>
             </div>
             <div className="content">
@@ -31,9 +32,12 @@ export const CurrentCountry = () => {
                         <div className="flag">
                             <img src={currentCountry?.flags?.png} />
                         </div>
-                        <div className="coat-of-arms">
-                            <img src={currentCountry?.coatOfArms?.png} />
-                        </div>
+                        {
+                            currentCountry?.coatOfArms?.png &&
+                            <div className="coat-of-arms">
+                                <img src={currentCountry?.coatOfArms?.png} />
+                            </div>
+                        }
                     </div>
                     <p >
                         {
@@ -79,7 +83,7 @@ export const CurrentCountry = () => {
                         {
                             currentCountry?.region &&
                             <span className="country__params">
-                              <span className="param-unit">Continent: </span> {currentCountry?.continents[0]}.
+                                <span className="param-unit">Continent: </span> {currentCountry?.continents[0]}.
                             </span>
                         }
                     </p>
@@ -117,13 +121,13 @@ export const CurrentCountry = () => {
                         }
                     </p>
                     <p>
-                {
-                    currentCountry?.area &&
-                    <span className="country__params">
-                        <span className="param-unit">Area: </span> {currentCountry?.area} km².
-                    </span>
-                }
-            </p>
+                        {
+                            currentCountry?.area &&
+                            <span className="country__params">
+                                <span className="param-unit">Area: </span> {currentCountry?.area} km².
+                            </span>
+                        }
+                    </p>
                 </div>
                 <div className="right-side">
                     <div className="google-map">

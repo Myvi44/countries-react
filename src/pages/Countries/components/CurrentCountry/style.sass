@@ -10,59 +10,112 @@
 
     .name
         color: white
-        display: flex
-        justify-content: space-around
-        width: 900px
-        font-size: 20px
+        text-align: center
+        font-size: 25px
 
     .country__params
         color: white
-            
+
         .param-unit
             color: black
 
     .content
-        display: flex
-        justify-content: space-between
 
         .left-side
-            width: 55%
-
             .border-link
                 all: unset
                 cursor: pointer
-                
+
                 &:hover
                     color: purple
 
             .flags
                 margin-top: 10px
-                display: flex
-                justify-content: space-between
-                height: 25vh
 
                 .flag
-                    height: 100%
 
                     img
                         height: 100%
                         width: 100%
 
                 .coat-of-arms
-                    height: 100%
 
                     img
                         height: 100%
                         width: 100%
         .right-side
-            width: 43%
-            
-
             .google-map
                 height: 70vh
-                border: 2px solid red
+                border: 1.5px solid rgb(1, 79, 44)
+                border-bottom: none
 
             .OpenStreet
                 border: 1.5px solid rgb(1, 79, 44)
-                border-radius: 5px 5px 10px 10px
+                border-radius: 0px 0px 10px 10px
                 background: rgba(173, 220, 173, 0.858)
+                text-align: center
+
+@media (min-width: 1300px)
+
+    .name
+        width: 60%
+
+    .content
+        display: flex
+        justify-content: space-between
+
+    .right-side
+        width: 43%
+
+    .left-side
+        width: 55%
+
+        .flags
+            display: flex
+            justify-content: space-between
+
+            .flag
+                width: 60%
+                aspect-ratio: 5/3
+            .coat-of-arms
+                width: 30%
+
+@media (max-width: 1299px)
+
+    .name
+        width: 100%
+
+    .right-side
+        width: 90%
+        margin: 0 auto
+
+    .left-side
+        width: 90%
+        margin: 0 auto
+
+    
+
+
+@media (max-width:700px)
+    .flags
+
+        .flag
+            width: 100%
+            aspect-ratio: 5/3
+            margin: 0 auto
+
+        .coat-of-arms
+            width: 75%
+            margin: 15px auto
+
+@media (min-width:701px) and (max-width: 1299px)
+    .flags
+
+        .flag
+            width: 75%
+            aspect-ratio: 5/3
+            margin: 0 auto
+
+        .coat-of-arms
+            width: 50%
+            margin: 15px auto
