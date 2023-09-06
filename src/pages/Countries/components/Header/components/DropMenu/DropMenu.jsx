@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {Link} from "react-router-dom"
 
 import "./style.sass";
 
@@ -12,21 +13,30 @@ export const DropMenu = ({ menus }) => {
         setDropMenuHidden(!dropMenuHidden)
     }
 
+    let menuObject = document.querySelector(".menu")
+
+    if(dropMenuHidden){
+        menuObject?.classList?.add("menu-wrapped")
+    }
+    else{
+        menuObject?.classList?.remove("menu-wrapped")
+    }
+
+
     return (
         <div className="drop-menu">
             <div onClick={switcherOnClick} className="drop-menu__switcher">
-                <MenuIcon />
+                <MenuIcon fontSize="large" />
             </div>
             {
-                !dropMenuHidden &&
                 <div className="menu">
                     {
                         menus && menus.map(
                             menu =>
                                 <div id={menu[1]} key={menu[0]} className="drop-menu__item">
-                                    <a href={menu[0]}>
+                                    <Link to={menu[0]}>
                                         {menu[1]}
-                                    </a>
+                                    </Link>
                                 </div>
                         )
                     }

@@ -12,8 +12,6 @@ export const Header = () => {
             <Title />
             <Menus menus={menus} />
             <DropMenu menus={menus} />
-
-            <hr className="hr-header" />
         </>
     )
 }

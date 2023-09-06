@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./style.sass";
 
 export const Menus = ({ menus }) => {
@@ -7,9 +9,9 @@ export const Menus = ({ menus }) => {
                 menus && menus.map(
                     menu =>
                         <div id={menu[1]} key={menu[0]} className="menus-item">
-                            <a href={menu[0]}>
+                            <Link to={menu[0]}>
                                 {menu[1]}
-                            </a>
+                            </Link>
                         </div>
                 )
             }

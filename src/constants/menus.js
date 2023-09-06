@@ -1,6 +1,8 @@
+import {Routes} from "./Routes"
+
 export const menus = [
-    ["/countries-react", "Главная"],
-    ["/countries-react/countries/all", "Страны"],
-    ["/countries-react/aboutUS", "О нас"],
-    ["/countries-react/contacts", "Контакты"]
+    [Routes.Home, "Главная"],
+    [Routes.Countries, "Страны"],
+    [Routes.AboutUs, "О нас"],
+    [Routes.Contacts, "Контакты"]
 ];

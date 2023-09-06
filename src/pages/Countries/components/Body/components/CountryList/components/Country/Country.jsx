@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom"
+import { Routes } from "../../../../../../../../constants/Routes"
+
 import { parseLanguagesToString } from "../../../../../../../../utility/parseLanguagesToString"
 
 import "./style.sass"
@@ -7,9 +10,9 @@ export const Country = ({ currentCountry }) => {
     return (
         <div className="country">
             <h3 className="country__name">
-                <a href={currentCountry?.cca3}>
+                <Link to={Routes.CurrentCountry(currentCountry?.cca3)}>
                     {currentCountry?.name?.official}
-                </a>
+                </Link>
             </h3>
             <div className="country__flag">
                 <img src={currentCountry?.flags?.png} alt={currentCountry?.flags?.alt} />
@@ -32,24 +35,8 @@ export const Country = ({ currentCountry }) => {
             </p>
             <p>
                 {
-                    currentCountry?.timezones?.length > 0 &&
-                    <span className="country__params">
-                        <span className="param-unit">Timezones: </span> {currentCountry?.timezones}.
-                    </span>
-                }
-            </p>
-            <p>
-                {
                     <span className="country__params">
                         <span className="param-unit">Population: </span>  {currentCountry?.population}.
-                    </span>
-                }
-            </p>
-            <p>
-                {
-                    currentCountry?.status &&
-                    <span className="country__params">
-                        <span className="param-unit">Status: </span>  {currentCountry?.status}.
                     </span>
                 }
             </p>
@@ -58,14 +45,6 @@ export const Country = ({ currentCountry }) => {
                     currentCountry?.region &&
                     <span className="country__params">
                         <span className="param-unit">Continent: </span> {currentCountry?.continents[0]}.
-                    </span>
-                }
-            </p>
-            <p>
-                {
-                    currentCountry?.startOfWeek &&
-                    <span className="country__params">
-                        <span className="param-unit">StartOfWeek: </span> {currentCountry?.startOfWeek}.
                     </span>
                 }
             </p>

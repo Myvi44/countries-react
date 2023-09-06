@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+
+import { Routes } from "../constants/Routes";
+
 export const parseBordersToString = (bordersArray, countryList) => {
     let resultArray = [];
 
@@ -13,11 +17,11 @@ export const parseBordersToString = (bordersArray, countryList) => {
 
         let currentSymbol = i < bordersArray?.length - 1 ? ", " : "."
         resultArray?.push(
-            <a className="border-link" href={`/countries-react/countries/${currentBorder?.id}`}>
+            <Link className="border-link" to={Routes.CurrentCountry(currentBorder?.id)}>
                 {
                     currentBorder?.params?.name?.official + currentSymbol
                 }
-            </a>
+            </Link>
         )
     }
 
