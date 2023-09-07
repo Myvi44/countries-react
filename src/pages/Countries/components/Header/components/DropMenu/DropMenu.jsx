@@ -1,5 +1,5 @@
 import { useState } from "react"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 
 import "./style.sass";
 
@@ -14,12 +14,13 @@ export const DropMenu = ({ menus }) => {
     }
 
     let menuObject = document.querySelector(".menu")
-
-    if(dropMenuHidden){
-        menuObject?.classList?.add("menu-wrapped")
-    }
-    else{
-        menuObject?.classList?.remove("menu-wrapped")
+    if (menuObject) {
+        if (!dropMenuHidden) {
+            menuObject.style.transform = "translate(0%)"
+        }
+        else {
+            menuObject.style.transform = "translate(-100%)"
+        }
     }
 
 

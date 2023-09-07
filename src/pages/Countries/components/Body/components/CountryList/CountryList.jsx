@@ -18,18 +18,19 @@ export const CountryList = () => {
     let countryListAfterSearch = setRightSearchResult(countryList, searchResult);
 
     let timezones = []
-    countryList.map( country => timezones.push(...country?.params?.continents))
+    countryList.map(country => timezones.push(...country?.params?.continents))
 
     console.log([... new Set(timezones)])
 
     return (
         <div>
             <Search searchResult={searchResult} setSearchResult={setSearchResult} />
-            
+
             <div className="country-list">
-                {Array.isArray(countryListAfterSearch) &&
+                {
+                    Array.isArray(countryListAfterSearch) &&
                     countryListAfterSearch.map(
-                        country => <Country key={country?.id} currentCountry={country?.params} />
+                        (country, index) => <Country key={country?.id} currentCountry={country?.params}  />
                     )
                 }
             </div>

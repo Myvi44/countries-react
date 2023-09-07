@@ -6,6 +6,8 @@ export const setRightSearchResult = (currentArray, searchResult) => {
     let arrayStartsWith = currentArray
         ?.filter(
             (country) => {
+                let wordsArray = country?.params?.name?.official?.toLowerCase().split(" ");
+                
                 return country?.params?.name?.official?.toLowerCase()?.startsWith(searchResult?.toLowerCase())
             }
         );
@@ -19,12 +21,6 @@ export const setRightSearchResult = (currentArray, searchResult) => {
         ?.filter(
             (country) => {
                 return country?.params?.capital && country?.params?.capital[0]?.toLowerCase()?.includes(searchResult?.toLowerCase())
-            }
-        );
-    let arrayCapitalStartsWith = currentArray
-        ?.filter(
-            (country) => {
-                return country?.params?.capital && country?.params?.capital[0]?.toLowerCase()?.startsWith(searchResult?.toLowerCase())
             }
         );
 

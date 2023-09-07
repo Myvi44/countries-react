@@ -1,11 +1,16 @@
 import { useContext } from "react"
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
+
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
 
 import { RestCountriesContext } from "../../Countries"
 import { parseLanguagesToString } from "../../../../utility/parseLanguagesToString";
 import { parseCurrenciesToString } from "../../../../utility/parseCurrenciesToString";
 import { parseBordersToString } from "../../../../utility/parseBordersToString";
 import { setZoomScale } from "../../../../utility/setZoomScale";
+import { Routes } from "../../../../constants/Routes";
 
 import { GoogleMapCustom } from "../../../../components/GoogleMapCustom"
 
@@ -15,11 +20,35 @@ export const CurrentCountry = () => {
 
     let countryList = useContext(RestCountriesContext);
     let { currentCountryID } = useParams();
-    let currentCountry = countryList.find(country => country?.id === currentCountryID)?.params;
+    let currentIndex;
+    let currentCountry = countryList.find(
+        (country, index) => {
+            currentIndex = index;
+            if (country?.id === currentCountryID) return true;
+        }
+    )?.params;
 
     console.log(currentCountry)
 
-    return (
+    return (<>
+        <div className="next-element__button">
+            <Link to={
+                currentIndex < countryList.length - 1
+                    ? Routes.CurrentCountry(countryList[currentIndex + 1]?.id)
+                    : Routes.CurrentCountry(countryList[0]?.id)
+            }>
+                <SkipNextIcon htmlColor="white" fontSize="large" />
+            </Link>
+        </div >
+        <div className="prev-element__button">
+            <Link to={
+                currentIndex > 0
+                    ? Routes.CurrentCountry(countryList[currentIndex - 1]?.id)
+                    : Routes.CurrentCountry(countryList[countryList.length - 1]?.id)
+            }>
+                <SkipPreviousIcon htmlColor="white" fontSize="large" />
+            </Link>
+        </div>
         <div className="current-country">
             <div className="name">
                 <b>
@@ -140,5 +169,6 @@ export const CurrentCountry = () => {
                 </div>
             </div>
         </div>
+    </>
     )
 }
