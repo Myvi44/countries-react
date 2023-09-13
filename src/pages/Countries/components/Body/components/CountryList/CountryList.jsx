@@ -5,6 +5,7 @@ import { setRightSearchResult } from "../../../../../../utility/setRightSearchRe
 
 import { Search } from "./components/Search"
 import { Country } from "./components/Country"
+import { Filter } from "./components/Filter"
 
 import "./style.sass"
 
@@ -12,8 +13,26 @@ export const CountryList = () => {
 
     let countryList = useContext(RestCountriesContext);
     let [searchResult, setSearchResult] = useState("")
+    let [filterResult, setFilterResult] = useState({
+        timezones: {
+            min: -5,
+            max: 10
+        },
+        car: [
+            "left", "right"
+        ],
+        continents: [
+            "Oceania",
+            "South America",
+            "Africa",
+            "North America",
+            "Europe",
+            "Asia",
+            "Antarctica"
+        ]
+    })
 
-    console.log(countryList);
+    console.log(filterResult?.timezones);
 
     let countryListAfterSearch = setRightSearchResult(countryList, searchResult);
 
@@ -25,12 +44,12 @@ export const CountryList = () => {
     return (
         <div>
             <Search searchResult={searchResult} setSearchResult={setSearchResult} />
-
+            <Filter filterResult={filterResult} setFilterResult={setFilterResult} />
             <div className="country-list">
                 {
                     Array.isArray(countryListAfterSearch) &&
                     countryListAfterSearch.map(
-                        (country, index) => <Country key={country?.id} currentCountry={country?.params}  />
+                        (country, index) => <Country key={country?.id} currentCountry={country?.params} />
                     )
                 }
             </div>

@@ -7,8 +7,13 @@ export const setRightSearchResult = (currentArray, searchResult) => {
         ?.filter(
             (country) => {
                 let wordsArray = country?.params?.name?.official?.toLowerCase().split(" ");
-                
-                return country?.params?.name?.official?.toLowerCase()?.startsWith(searchResult?.toLowerCase())
+
+                for (let word of wordsArray) {
+                    if (word.toLowerCase()?.startsWith(searchResult?.toLowerCase()))
+                        return true
+                }
+
+                return false
             }
         );
     let arrayIncludes = currentArray
@@ -24,7 +29,7 @@ export const setRightSearchResult = (currentArray, searchResult) => {
             }
         );
 
-    resultArray = [...new Set([...arrayStartsWith, ...arrayIncludes, ...arrayCapitalIncludes, ...arrayCapitalStartsWith])]
+    resultArray = [...new Set([...arrayStartsWith, ...arrayIncludes, ...arrayCapitalIncludes])]
 
     return resultArray;
 }
