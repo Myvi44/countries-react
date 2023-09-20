@@ -5,6 +5,7 @@
         z-index: 10
         top: 0
         left: 0
+        
 
         .drop-menu__switcher
             cursor: pointer
@@ -13,7 +14,7 @@
             top: 15px
             left: 15px
 
-        .menu
+        .menu 
             transform: translate(-100%)
             transition: .35s
             padding-top: 50px
@@ -23,21 +24,40 @@
             position: absolute
             left: 0
             top: 0
-            background-color: rgba(45, 89, 157, .8)
+            background-color: rgba(87, 93, 101, 0.8)
             backdrop-filter: blur(10px)
+            border-top-right-radius: 55px
+            border-bottom-right-radius: 55px
 
-            .drop-menu__item
+    
+              
+
+        
+
+            .drop-menu__item 
                 margin-top: 50px
                 font-size: 32px
-                background-color: red
+                background-color: rgb(163, 163, 130)
                 text-align: center
+                border: 2 px solid rgb(0, 0, 0)
+
+                
+                
+        
+    
+            
 
                 a
                     text-decoration: none
                     color: black
+                    
+
+                    &:hover
+                color: purple
                 
 
 @media(min-width: 1300px)
     .drop-menu
         display: none
+        
             
