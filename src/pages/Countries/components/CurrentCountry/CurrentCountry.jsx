@@ -37,7 +37,7 @@ export const CurrentCountry = () => {
                     ? Routes.CurrentCountry(countryList[currentIndex + 1]?.id)
                     : Routes.CurrentCountry(countryList[0]?.id)
             }>
-                <SkipNextIcon htmlColor="white" fontSize="large" />
+                <SkipNextIcon htmlColor="salmon" fontSize="large" />
             </Link>
         </div >
         <div className="prev-element__button">
@@ -46,7 +46,7 @@ export const CurrentCountry = () => {
                     ? Routes.CurrentCountry(countryList[currentIndex - 1]?.id)
                     : Routes.CurrentCountry(countryList[countryList.length - 1]?.id)
             }>
-                <SkipPreviousIcon htmlColor="white" fontSize="large" />
+                <SkipPreviousIcon htmlColor="salmon" fontSize="large" />
             </Link>
         </div>
         <div className="current-country">
