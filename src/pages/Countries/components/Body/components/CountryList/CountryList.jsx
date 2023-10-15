@@ -12,34 +12,32 @@ import "./style.sass"
 export const CountryList = () => {
 
     let countryList = useContext(RestCountriesContext);
-    let [searchResult, setSearchResult] = useState("")
-    let [filterResult, setFilterResult] = useState({
-        timezones: {
-            min: -5,
-            max: 10
-        },
-        car: [
-            "left", "right"
-        ],
-        continents: [
-            "Oceania",
-            "South America",
-            "Africa",
-            "North America",
-            "Europe",
-            "Asia",
-            "Antarctica"
-        ]
-    })
 
-    console.log(filterResult?.timezones);
+    const [searchResult, setSearchResult] = useState("");
+    const [filterResult, setFilterResult] = useState({
+        timezones: {
+            min: -12,
+            max: 14
+        },
+        car: {
+            left: true,
+            right: true
+        },
+        continents: {
+            "Oceania": true,
+            "South America": true,
+            "Africa": true,
+            "North America": true,
+            "Europe": true,
+            "Asia": true,
+            "Antarctica": true
+        }
+    });
+
+    console.log(filterResult)
 
     let countryListAfterSearch = setRightSearchResult(countryList, searchResult);
-
-    let timezones = []
-    countryList.map(country => timezones.push(...country?.params?.continents))
-
-    console.log([... new Set(timezones)])
+    // let countryListAfterFilter = setRightFilterResult(countryList, filterResult);
 
     return (
         <div>

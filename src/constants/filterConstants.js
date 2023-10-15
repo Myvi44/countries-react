@@ -3,9 +3,10 @@ export const filterConstants = {
         min: -12,
         max: 14
     },
-    car: [
-        "left", "right"
-    ],
+    car: {
+        left: true,
+        right: true
+    },
     languages: [],
     continents: [
         "Oceania",

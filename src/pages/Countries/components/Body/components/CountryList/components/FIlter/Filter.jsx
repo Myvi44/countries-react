@@ -1,37 +1,153 @@
 import Slider from '@mui/material/Slider';
-import { useEffect } from 'react';
+
 import { filterConstants } from '../../../../../../../../constants/filterConstants';
 
 import "./style.sass"
 
 export const Filter = ({ filterResult, setFilterResult }) => {
 
-    useEffect(() => { console.log(filterResult) }, {})
-
     return (
         <div className="filter">
-            <div className="timezone-filter">
+            <div className="filter__timezones">
+                <input
+                    min={-12}
+                    max={14}
+                    type="text"
+                    value={filterResult?.timezones?.min}
+                    onChange={
+                        event => {
+                            let currentFilter = { ...filterResult };
+
+                            if (currentFilter.timezones) {
+                                currentFilter.timezones = {
+                                    min: event.target.value,
+                                    max: filterResult?.timezones?.max
+                                }
+                            }
+
+                            console.log(currentFilter)
+
+                            setFilterResult(currentFilter)
+                        }
+                    }
+                />
                 <Slider
                     getAriaLabel={() => 'Timezones slider'}
-                    value={[filterResult?.timezones?.min, filterResult?.timezones?.max]}
+                    value={Object.values(filterResult.timezones)}
                     min={filterConstants?.timezones?.min}
                     max={filterConstants?.timezones?.max}
                     valueLabelDisplay='auto'
                     onChange={
-                        (event) => {
-                            let currentFilter = Object?.assign(filterResult);
-                            console.log(event?.target?.value)
+                        (event, newValue) => {
+                            let currentFilter = { ...filterResult };
 
-                            currentFilter.timezones && (
+                            if (currentFilter.timezones) {
                                 currentFilter.timezones = {
-                                    min: event?.target?.value[0],
-                                    max: event?.target?.value[1]
+                                    min: newValue[0],
+                                    max: newValue[1]
                                 }
-                            );
-                            setFilterResult(currentFilter);
+                            }
+
+                            console.log(currentFilter)
+
+                            setFilterResult(currentFilter)
                         }
                     }
                 />
+                <input
+                    min={-12}
+                    max={14}
+                    type="text"
+                    value={filterResult?.timezones?.max}
+                    onChange={
+                        event => {
+                            let currentFilter = { ...filterResult };
+
+                            if (currentFilter.timezones) {
+                                currentFilter.timezones = {
+                                    min: filterResult?.timezones?.min,
+                                    max: event.target.value
+                                }
+                            }
+
+                            setFilterResult(currentFilter)
+                        }
+                    }
+                />
+            </div>
+            <div className="filter__car-side">
+                <div className="side">
+                    <input
+                        type="checkbox"
+                        id='left'
+                        className='car-side'
+                        checked={filterResult?.car?.left}
+                        onChange={
+                            event => {
+                                let currentFilter = { ...filterResult };
+
+                                if (currentFilter.car) {
+                                    currentFilter.car = {
+                                        left: !filterResult?.car?.left,
+                                        right: filterResult?.car?.right
+                                    }
+                                }
+
+                                setFilterResult(currentFilter)
+                            }
+                        }
+                    />
+                    <label htmlFor="left">Left-side</label>
+                </div>
+                <div className="side">
+                    <input
+                        type="checkbox"
+                        id='right'
+                        className='car-side'
+                        checked={filterResult?.car?.right}
+                        onChange={
+                            event => {
+                                let currentFilter = { ...filterResult };
+
+                                if (currentFilter.car) {
+                                    currentFilter.car = {
+                                        left: filterResult?.car?.left,
+                                        right: !filterResult?.car?.right
+                                    }
+                                }
+
+                                setFilterResult(currentFilter)
+                            }
+                        }
+                    />
+                    <label htmlFor="right">Right-side</label>
+                </div>
+            </div>
+            <div className="filter__continents">
+                {
+                    Object.keys(filterResult?.continents).map(
+                        continent =>
+                            <div key={continent} className="continent-filter-item">
+                                <input
+                                    type="checkbox"
+                                    id={continent}
+                                    checked={filterResult?.continents[continent]}
+                                    onChange={
+                                        event => {
+                                            let currentFilter = { ...filterResult };
+                
+                                            if (currentFilter.continents) {
+                                                currentFilter.continents[continent] = !currentFilter.continents[continent]
+                                            }
+                
+                                            setFilterResult(currentFilter)
+                                        }
+                                    }
+                                />
+                                <label htmlFor={continent}>{continent}</label>
+                            </div>
+                    )
+                }
             </div>
         </div>
     )
