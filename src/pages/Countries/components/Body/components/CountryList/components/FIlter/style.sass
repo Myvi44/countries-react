@@ -1,15 +1,26 @@
-.filter
-    background-color: black
+.filter-block
+    position: relative
     width: 75vw
     margin: 0 auto
     color: white
 
+.filter
+    background-color: black
+    transition: .15s
+    height: 0px
+
+.filter__icon
+    position: absolute
+    right: 35px
+    bottom: -5px
+    width: fit-content
 
 .filter__timezones
     display: flex
 
     input
         width: 10%
+        margin: 5px 15px
         text-align: center
 
 .filter__car-side
@@ -20,4 +31,3 @@
 
     label
         cursor: pointer
-        
