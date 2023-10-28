@@ -5,9 +5,13 @@
     color: white
 
 .filter
-    background-color: black
+    background-color: rgba(135, 119, 4, 0.606)
+    backdrop-filter: blur(10px)
+    color: rgb(32, 31, 31)
     transition: .15s
     height: 0px
+    border-bottom-left-radius: 10px
+    border-bottom-right-radius: 10px
 
 .filter__icon
     position: absolute
@@ -19,9 +23,13 @@
     display: flex
 
     input
-        width: 10%
+        width: 8%
         margin: 5px 15px
         text-align: center
+        border-radius: 10px
+        border: 1.5px solid black
+        box-shadow:15px rgb(0, 0, 0)
+        font-size: 15px
 
 .filter__car-side
     width: 40%
