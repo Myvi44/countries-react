@@ -14,9 +14,11 @@ export const Filter = ({ filterResult, setFilterResult }) => {
     if (filterObject) {
         if (filterWrapped) {
             filterObject.style.height = "0px";
+            setTimeout(() => filterObject.style.display = "none", 200)
         }
         else {
             filterObject.style.height = "280px";
+            setTimeout(() => filterObject.style.display = "block", 200)
         }
     }
 
