@@ -12,6 +12,18 @@
     height: 0px
     border-bottom-left-radius: 10px
     border-bottom-right-radius: 10px
+    
+    label
+        margin-bottom: 15px
+        background-color: white
+        width: 150px
+        height: 20px
+        display: block
+        text-align: center
+
+        &:hover
+            background-color: orange
+            cursor: pointer
 
 .filter__icon
     position: absolute
@@ -28,7 +40,7 @@
         text-align: center
         border-radius: 10px
         border: 1.5px solid black
-        box-shadow:15px rgb(0, 0, 0)
+        box-shadow: 15px rgb(0, 0, 0)
         font-size: 15px
 
 .filter__car-side
@@ -37,5 +49,7 @@
     display: flex
     justify-content: space-evenly
 
-    label
-        cursor: pointer
+.filter__continents
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-evenly

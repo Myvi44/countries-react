@@ -14,11 +14,9 @@ export const Filter = ({ filterResult, setFilterResult }) => {
     if (filterObject) {
         if (filterWrapped) {
             filterObject.style.height = "0px";
-            setTimeout(() => filterObject.style.display = "none", 200)
         }
         else {
-            filterObject.style.height = "280px";
-            setTimeout(() => filterObject.style.display = "block", 200)
+            filterObject.style.height = "320px";
         }
     }
 
@@ -94,50 +92,55 @@ export const Filter = ({ filterResult, setFilterResult }) => {
                 </div>
                 <div className="filter__car-side">
                     <div className="side">
-                        <input
-                            type="checkbox"
-                            id='left'
-                            className='car-side'
-                            checked={filterResult?.car?.left}
-                            onChange={
-                                event => {
-                                    let currentFilter = { ...filterResult };
 
-                                    if (currentFilter.car) {
-                                        currentFilter.car = {
-                                            left: !filterResult?.car?.left,
-                                            right: filterResult?.car?.right
+                        <label htmlFor="left">
+                            <input
+                                type="checkbox"
+                                id='left'
+                                className='car-side'
+                                checked={filterResult?.car?.left}
+                                onChange={
+                                    event => {
+                                        let currentFilter = { ...filterResult };
+
+                                        if (currentFilter.car) {
+                                            currentFilter.car = {
+                                                left: !filterResult?.car?.left,
+                                                right: filterResult?.car?.right
+                                            }
                                         }
-                                    }
 
-                                    setFilterResult(currentFilter)
+                                        setFilterResult(currentFilter)
+                                    }
                                 }
-                            }
-                        />
-                        <label htmlFor="left">Left-side</label>
+                            />
+                            Left-side
+                        </label>
                     </div>
                     <div className="side">
-                        <input
-                            type="checkbox"
-                            id='right'
-                            className='car-side'
-                            checked={filterResult?.car?.right}
-                            onChange={
-                                event => {
-                                    let currentFilter = { ...filterResult };
 
-                                    if (currentFilter.car) {
-                                        currentFilter.car = {
-                                            left: filterResult?.car?.left,
-                                            right: !filterResult?.car?.right
+                        <label htmlFor="right">
+                            <input
+                                type="checkbox"
+                                id='right'
+                                className='car-side'
+                                checked={filterResult?.car?.right}
+                                onChange={
+                                    event => {
+                                        let currentFilter = { ...filterResult };
+
+                                        if (currentFilter.car) {
+                                            currentFilter.car = {
+                                                left: filterResult?.car?.left,
+                                                right: !filterResult?.car?.right
+                                            }
                                         }
-                                    }
 
-                                    setFilterResult(currentFilter)
+                                        setFilterResult(currentFilter)
+                                    }
                                 }
-                            }
-                        />
-                        <label htmlFor="right">Right-side</label>
+                            />Right-side
+                        </label>
                     </div>
                 </div>
                 <div className="filter__continents">
@@ -145,23 +148,26 @@ export const Filter = ({ filterResult, setFilterResult }) => {
                         Object.keys(filterResult?.continents).map(
                             continent =>
                                 <div key={continent} className="continent-filter-item">
-                                    <input
-                                        type="checkbox"
-                                        id={continent}
-                                        checked={filterResult?.continents[continent]}
-                                        onChange={
-                                            event => {
-                                                let currentFilter = { ...filterResult };
 
-                                                if (currentFilter.continents) {
-                                                    currentFilter.continents[continent] = !currentFilter.continents[continent]
+                                    <label htmlFor={continent}>
+                                        <input
+                                            type="checkbox"
+                                            id={continent}
+                                            checked={filterResult?.continents[continent]}
+                                            onChange={
+                                                event => {
+                                                    let currentFilter = { ...filterResult };
+
+                                                    if (currentFilter.continents) {
+                                                        currentFilter.continents[continent] = !currentFilter.continents[continent]
+                                                    }
+
+                                                    setFilterResult(currentFilter)
                                                 }
-
-                                                setFilterResult(currentFilter)
                                             }
-                                        }
-                                    />
-                                    <label htmlFor={continent}>{continent}</label>
+                                        />
+                                        {continent}
+                                    </label>
                                 </div>
                         )
                     }
