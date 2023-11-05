@@ -12,12 +12,11 @@
     height: 0px
     border-bottom-left-radius: 10px
     border-bottom-right-radius: 10px
-    
+
     label
-        margin-bottom: 15px
         background-color: white
         width: 150px
-        height: 20px
+        height: 25px
         display: block
         text-align: center
 
@@ -32,10 +31,20 @@
     width: fit-content
 
 .filter__timezones
+    padding-top: 20px
     display: flex
+    display: flex
+    justify-content: space-evenly
+
+    &::before
+        top: -4px
+        position: absolute
+        content: "Timezones"
+        display: block
 
     input
-        width: 8%
+        width: 10%
+        height: 30px
         margin: 5px 15px
         text-align: center
         border-radius: 10px
@@ -44,12 +53,34 @@
         font-size: 15px
 
 .filter__car-side
-    width: 40%
+    padding-top: 20px
+    width: 100%
     margin: 0 auto
     display: flex
     justify-content: space-evenly
+    position: relative
+
+    &::before
+        top: -4px
+        content: "Car-side"
+        display: block
+        position: absolute
+        
 
 .filter__continents
+    padding-top: 20px
     display: flex
     flex-wrap: wrap
     justify-content: space-evenly
+    min-height: 80px
+    position: relative
+    
+    &::before
+        top: -5px
+        position: absolute
+        content: "Continents"
+        display: block
+
+    .continent-filter-item
+        &:nth-child(2n)
+            align-self: flex-end

@@ -13,10 +13,12 @@ export const Filter = ({ filterResult, setFilterResult }) => {
     let filterObject = document.querySelector('.filter');
     if (filterObject) {
         if (filterWrapped) {
-            filterObject.style.height = "0px";
+            filterObject.style['min-height'] = "0px";
+            setTimeout(() => filterObject.style.display = "none", 150)
         }
         else {
-            filterObject.style.height = "320px";
+            filterObject.style['min-height'] = "280px";
+            setTimeout(() => filterObject.style.display = "block", 150)
         }
     }
 
@@ -90,9 +92,9 @@ export const Filter = ({ filterResult, setFilterResult }) => {
                         }
                     />
                 </div>
+                <hr />
                 <div className="filter__car-side">
                     <div className="side">
-
                         <label htmlFor="left">
                             <input
                                 type="checkbox"
@@ -118,7 +120,6 @@ export const Filter = ({ filterResult, setFilterResult }) => {
                         </label>
                     </div>
                     <div className="side">
-
                         <label htmlFor="right">
                             <input
                                 type="checkbox"
@@ -143,6 +144,7 @@ export const Filter = ({ filterResult, setFilterResult }) => {
                         </label>
                     </div>
                 </div>
+                <hr />
                 <div className="filter__continents">
                     {
                         Object.keys(filterResult?.continents).map(
