@@ -4,6 +4,8 @@ import { sendRequest } from "../../services/sendRequest"
 import { Header } from "./components/Header"
 import { Outlet } from "react-router";
 
+import "./style.sass"
+
 export let RestCountriesContext = createContext([]);
 
 export const Countries = () => {
