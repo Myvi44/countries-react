@@ -39,7 +39,7 @@ export const CountryList = () => {
     let countryListAfterSearch = setRightSearchResult(countryList, searchResult);
     let countryListAfterFilter = setRightFilterResult(countryListAfterSearch, filterResult);
     console.log(countryListAfterFilter.map(
-        (country)=>country.id
+        (country)=>country.params
     ))
     return (
         <div>
